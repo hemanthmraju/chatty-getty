@@ -11,7 +11,7 @@ group :production, :mysql do
 end
 
 group :production, :postgresql do
-  gem 'pg'
+  #gem 'pg'
 end
 
 group :development, :test do
@@ -48,3 +48,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'devise'
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'

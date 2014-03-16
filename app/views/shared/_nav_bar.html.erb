@@ -1,0 +1,20 @@
+<% if current_user %>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#">Home</a></li>
+	<li><a href="#">Profile</a></li>
+	<li><a href="#">Messages</a></li>
+	<li><a href="#">Private</a></li>
+	<li class="dropdown pull-right">
+                <a href="/" class="dropdown-toggle a-dark capitalize-text" data-toggle="dropdown">
+                  <em><%= current_user.email %></em> <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li role="presentation">
+                    <%= link_to 'Log Out', "/users/sign_out",:confirm => 'Are you sure?',:method => :delete,%>
+                  </li>
+                </ul>
+              </li>
+</ul>
+<% end %>
+
+
