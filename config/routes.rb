@@ -1,5 +1,5 @@
 RailsApp::Application.routes.draw do
-  get "welcome/index"
+  
 
   devise_for :users
 
@@ -15,7 +15,8 @@ RailsApp::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+     resources :channels
+     resources :messages
 
   # Sample resource route with options:
   #   resources :products do

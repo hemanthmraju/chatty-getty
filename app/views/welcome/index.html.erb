@@ -1,9 +1,65 @@
-<div class="row">
+<div class="outer_index">
+<div style="margin:3%">
+Online Users
+</div>
+<div class="row show-grid" style="margin-left:1%;margin-bottom:1%;">
+	<%# @users.each do |user| %>
+		<!--div class="span1"><%#=user.email%></div-->	
+	<%#end%>
   <div class="span1">...</div>
   <div class="span1">...</div>
   <div class="span1">...</div>
   <div class="span1">...</div>
   <div class="span1">...</div>
   <div class="span1">...</div>
+  
+</div>
+<div class="row show-grid" style="margin-left:1%;margin-bottom:1%;">
   <div class="span1">...</div>
+  <div class="span1">...</div>
+  <div class="span1">...</div>
+  <div class="span1">...</div>
+  <div class="span1">...</div>
+  <div class="span1">...</div>
+  
+</div>
+<div style="margin:3%">
+Chat Rooms	
+<button class="btn btn-warning btn-xs pull-right" data-toggle="modal" data-target="#myModal">Create Chat Room </button>
+</div>
+
+<div class="row show-grid" style="margin-left:1%;margin-bottom:2%;">
+	<% @channels.each do |channel| %>
+  <div class="span1" style="margin:2px;" ><a href="/channels/<%=channel.id%>"><%=channel.name%></a></div>
+
+  <%end%>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Chatty-Getty</h4>
+      </div>
+      <div class="modal-body">
+        	
+        	<%= form_for @chat_room  do |f| %>
+			  <%= f.label :name %>
+			  <%= f.text_field :name %><br />
+
+			  <%= f.label :description %>
+			  <%= f.text_field :description %><br />
+
+			  <%= f.submit %>
+			<% end %>
+
+
+      </div>
+      
+    </div>
+  </div>
 </div>
