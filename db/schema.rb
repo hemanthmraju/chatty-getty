@@ -11,18 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140316100114) do
+ActiveRecord::Schema.define(:version => 20140331172151) do
 
   create_table "channels", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "user_id"
-    t.integer  "message_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
-
-  add_index "channels", ["user_id"], :name => "index_channels_on_user_id"
 
   create_table "channels_users", :id => false, :force => true do |t|
     t.integer "channel_id"
@@ -38,6 +34,16 @@ ActiveRecord::Schema.define(:version => 20140316100114) do
   end
 
   add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
+
+  create_table "user_details", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "dob"
+    t.string   "mobile"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

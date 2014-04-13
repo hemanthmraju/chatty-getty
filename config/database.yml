@@ -30,7 +30,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: chat_development
+  database: chat_development_new_hem_ne2
   pool: 5
   username: root
   password: admin

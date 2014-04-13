@@ -9,7 +9,8 @@
 <h6><%= m.text_message %></h6>
 <%end%>
 
-<%= form_for @message, :remote => true do |f| %>
+
+<%= form_for Message.new, :remote => true do |f| %>
 	 <%= f.label :text_message %>
 	 <%= f.text_area :text_message,:rows => "3" %><br />
 	 <%= f.hidden_field :channel_id , :value => @channel.id %>

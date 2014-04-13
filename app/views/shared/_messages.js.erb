@@ -1,0 +1,7 @@
+
+<% publish_to "/messages/new/#{@channel.id}" do %>
+//onsole.log("hi");
+  $("#messages").append("<p><b><%= @message.user.email %></b> : <%= @message.text_message %> </p>");
+  $("#new_message")[0].reset();
+<% end %>
+

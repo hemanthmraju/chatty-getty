@@ -3,14 +3,16 @@
 
 <div class="pull-right">
 	<h5>Users</h5>
-	<% @channel.users.each do |u| %>
+	<% @channel.users.uniq.each do |u| %>
 	<h6><%= u.email %></h6>
 	<%end%>
 </div>
 
+<div id="messages">
 <% @channel.messages.each do |m| %>
 <p><b><%= m.user.email %></b> : <%= m.text_message %> </p>
 <%end%>
+</div>
 
 <%= form_for @message, :remote => true do |f| %>
 	 <%= f.label :text_message %>
@@ -21,7 +23,14 @@
 <% end %>
 
 <script type="text/javascript">
-$(document).bind("ajax:complete","#new_message", function(){
-	
+$('#message_text_message').keypress(function (e) {
+	console.log(e.which);
+  if(e.which == 13) {
+  	console.log("hh");
+    $('form#new_message').submit();
+    return false;    
+  }
 });
+	
 </script>
+<%= subscribe_to "/messages/new/#{@channel.id}" %>

@@ -5,6 +5,6 @@ class CreateChannels < ActiveRecord::Migration
       t.text :description
       t.timestamps
     end
-    add_index :channels
+    #add_index :channels
   end
 end

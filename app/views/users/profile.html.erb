@@ -1,0 +1,10 @@
+<h6>Profile	</h6>
+<%= @user.inspect %>
+<%= @user_detail%>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".nav").find(".active").removeClass('active');
+	$('.nav li:nth-child(2)').addClass('active')
+});
+</script>

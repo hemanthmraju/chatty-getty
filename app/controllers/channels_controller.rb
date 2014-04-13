@@ -4,7 +4,7 @@ class ChannelsController < ApplicationController
   	@channel = Channel.new(params[:channel])
   	@channel.users << current_user
   	@channel.save 
-  	
+  	@message = Message.new
   end
 
   def show

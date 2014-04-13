@@ -7,12 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= image_tag("logo.png", :class => "logo")%>
+	<a href="\"><%= image_tag("logo.png", :class => "logo")%></a>
 <div class="container" style="margin-top:5px;">
 	<div class="row ">
 		<div class="span2 ads" ></div>
 		<div class="span7">
 			<%= render :partial => '/shared/nav_bar' %>
+			<% if flash[:notice] %>
+    			<div class="notice"><%= flash[:notice] %></div>
+ 			 <% end %>
 			<%= yield %> 	
 		</div>
 		<div class="span2 ads"></div>
@@ -22,3 +25,8 @@
 
 </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".notice").fadeOut(3000);
+});
+</script>

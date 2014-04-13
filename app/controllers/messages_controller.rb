@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @channel.save
   	@message = Message.new(params[:message])
     if @message.save
-      render :text => "message sent"
+      render :partial => "/shared/messages"
     end  
 
   end
