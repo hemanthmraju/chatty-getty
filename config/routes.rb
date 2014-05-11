@@ -55,6 +55,8 @@ RailsApp::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
   match '/user_profile' , :to => "users#profile"
+  match '/user_details' , :to => "users#profile_update"
+  match '/user_detail' , :to => "users#profile_update"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

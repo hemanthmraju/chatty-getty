@@ -3,9 +3,14 @@
 Online Users
 </div>
 <div class="row show-grid" style="margin-left:1%;margin-bottom:1%;">
-	<%# @users.each do |user| %>
-		<!--div class="span1"><%#=user.email%></div-->	
-	<%#end%>
+  <%#= @online_users.inspect%>
+	<% @online_users.each do |user| %>
+		<a href="#"><div class="span1"><%#=user.user_detail.first_name%></div></a>	
+	<%end%>
+  
+  
+</div>
+<!-- <div class="row show-grid" style="margin-left:1%;margin-bottom:1%;">
   <div class="span1">...</div>
   <div class="span1">...</div>
   <div class="span1">...</div>
@@ -13,16 +18,7 @@ Online Users
   <div class="span1">...</div>
   <div class="span1">...</div>
   
-</div>
-<div class="row show-grid" style="margin-left:1%;margin-bottom:1%;">
-  <div class="span1">...</div>
-  <div class="span1">...</div>
-  <div class="span1">...</div>
-  <div class="span1">...</div>
-  <div class="span1">...</div>
-  <div class="span1">...</div>
-  
-</div>
+</div> -->
 <div style="margin:3%">
 Chat Rooms	
 <button class="btn btn-warning btn-xs pull-right" data-toggle="modal" data-target="#myModal">Create Chat Room </button>
