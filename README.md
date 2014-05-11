@@ -143,3 +143,9 @@ This code is dedicated to the public domain to the maximum extent permitted by a
 chatty-getty
 ============
 
+Run following---
+to start the thin server.
+
+rackup private_pub.ru -s thin -E production
+
+
