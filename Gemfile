@@ -19,7 +19,13 @@ group :development, :test do
   gem 'minitest'
   gem 'thor', '= 0.14.6'
 end
-
+gem 'heroku'
+gem 'pg'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+gem 'omniauth-pinterest'
+gem "omniauth-google-oauth2", "~> 0.1.11"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

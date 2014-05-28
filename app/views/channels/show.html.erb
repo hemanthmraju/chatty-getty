@@ -9,9 +9,7 @@
 </div>
 
 <div id="messages">
-<% @channel.messages.each do |m| %>
-<p><b><%= m.user.email %></b> : <%= m.text_message %> </p>
-<%end%>
+<%=render :partial =>"message"%>
 </div>
 
 <%= form_for @message, :remote => true do |f| %>

@@ -1,7 +1,10 @@
 RailsApp::Application.routes.draw do
   
 
-  devise_for :users
+   devise_for :users,
+    :controllers => {
+		:omniauth_callbacks => "users/omniauth_callbacks"
+	}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,6 +60,7 @@ RailsApp::Application.routes.draw do
   match '/user_profile' , :to => "users#profile"
   match '/user_details' , :to => "users#profile_update"
   match '/user_detail' , :to => "users#profile_update"
+  match '/user_messages' , :to => "messages#show"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

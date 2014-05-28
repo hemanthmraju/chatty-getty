@@ -1,0 +1,3 @@
+<% @channel.messages.each do |m| %>
+<p><b><%= m.user.email %></b> : <%= m.text_message %> </p>
+<%end%>

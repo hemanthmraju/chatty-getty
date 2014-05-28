@@ -1,11 +1,15 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+    require "omniauth-facebook"
+	require "omniauth-twitter"
+	require "omniauth-google-oauth2"
+	require "omniauth-linkedin"
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
-   config.secret_key = 'a723e862dab010be9f0a4d4a94c42ecdd3dadfbf1d1a1d5bce7d98d85886a0e961df1ed9868918767ac84598ca04fd474c9bb5a1c21c9b072531896a693dc91a'
+   #~ config.secret_key = 'a723e862dab010be9f0a4d4a94c42ecdd3dadfbf1d1a1d5bce7d98d85886a0e961df1ed9868918767ac84598ca04fd474c9bb5a1c21c9b072531896a693dc91a'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -32,7 +36,10 @@ Devise.setup do |config|
   # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
-
+    config.omniauth :facebook,  '266046206833470', 'a8c4ca765c9f70af20f55c844e9dfc55', :scope => 'offline_access,email,user_birthday,user_location,user_status,manage_notifications,read_stream', :display => 'page'
+	config.omniauth :twitter, 'Y57Bqfd1rYakxFhUQR8ZrQ', 'ZzGTbIb2Gvczp9xvEBadRhvYVRrc2bn48QoAUYdo'
+	config.omniauth :google_oauth2, '591756520530.apps.googleusercontent.com', 'SJiwD3CFEVNGo59dqJsMmwKB'
+	config.omniauth :linkedin, "ufovcxexo1mf", "gPfiDieB3QnKNTOR" 
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.

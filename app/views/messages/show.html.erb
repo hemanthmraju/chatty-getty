@@ -1,0 +1,11 @@
+<div class="pull-left">
+	<h5>Users Messages</h5>
+	<% @channel.each do |u| %>
+       <p><b>Channel Name </b> :<%=u.name%></p>
+      <p><b>Messages</b>:
+	  <%u.messages.each do |message|%>
+      <p><b><%= message.user.email %></b> : <%= message.text_message %> </p>
+      <%end%> </p>
+	<%end%>
+</div>
+

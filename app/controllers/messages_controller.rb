@@ -6,9 +6,13 @@ class MessagesController < ApplicationController
     @channel.save
   	@message = Message.new(params[:message])
     if @message.save
-      render :partial => "/shared/messages"
+      render :partial => "/shared/messages",:locals=>{:message=>@message,:channel=>@channel}
     end  
 
+  end
+  
+  def show
+     @channel=current_user.channels.uniq 
   end
 
   def read
