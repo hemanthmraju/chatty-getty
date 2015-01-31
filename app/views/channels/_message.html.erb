@@ -1,3 +1,4 @@
 <% @channel.messages.each do |m| %>
-<p><b><%= m.user.email %></b> : <%= m.text_message %> </p>
+<p><b><%= m.user.user_detail.present? ? (image_tag m.user.user_detail.avatar.url(:thumb)) : (image_tag '/assets/guest.png') %></b> : <%= m.text_message %> </p>
 <%end%>
+

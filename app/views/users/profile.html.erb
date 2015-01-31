@@ -1,7 +1,7 @@
 <h6>Profile	</h6>
 
 
-<%= form_for (current_user.user_detail ? current_user.user_detail : current_user.build_user_detail)   do |f| %>
+<%= form_for (current_user.user_detail ? current_user.user_detail : current_user.build_user_detail) , :html => { :multipart => true }  do |f| %>
 	<%= f.label :first_name %>
 	<%= f.text_field :first_name %><br />
 
@@ -11,6 +11,8 @@
 	<%= f.text_field :dob %><br />
     <%= f.label :mobile %>
 	<%= f.text_field :mobile %><br />
+	<%= f.label :Profile_picture %>
+	<%= f.file_field :avatar %><br />
 	<%= hidden_field_tag "user_detail[user_id]","#{current_user.id}" %><br />
 	<%= f.submit %>
 <% end %>
